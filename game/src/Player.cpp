@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "world.h"
+#include <cmath>
 
 Player::Player(std::string name, int health)
     : name_(name), health_(health), maxHealth_(health), x_(300.f), y_(400.f) {}
@@ -11,9 +12,9 @@ void Player::move(float dx, float dy) {
     x_ += dx;
     y_ += dy;
 };
-void Player::newMaxHealth() const{
-    return (maxHealth_ + (2 ** rounds_));
-}
+int Player::newMaxHealth() const{
+    return maxHealth_ + (int)std::pow(1.1, rounds_);
+};
 bool Player::isAlive() const{
     return health_ > 0;
 }

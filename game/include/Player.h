@@ -7,7 +7,7 @@ public:
 
     void takeDamage(int dmg);
     void move(float dx, float dy);
-    void newMaxHealth() const;
+    int newMaxHealth() const;
     bool isAlive() const;
 
     float getX() const;

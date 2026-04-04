@@ -1,6 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "Player.h"
+#include "world.h"
+#include <cmath>
+#include <iostream>
 // make a tower defense game or smth
 int main() {
     //code
@@ -29,7 +32,7 @@ int main() {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down )) player.move( 0.0f,  2.0f);
         //add physics here later
         shape.setPosition(player.getX(), player.getY());
-        statusText.setString( player.getName() + " | HP: " + std::to_string(static_cast<int>(100)) + " | Pos: (" + std::to_string(static_cast<int>(player.getX())) + ", " + std::to_string(static_cast<int>(player.getY())) + ")" );
+        statusText.setString( player.getName() + " | HP: " + std::to_string(player.newMaxHealth()) + " | Pos: (" + std::to_string(static_cast<int>(player.getX())) + ", " + std::to_string(static_cast<int>(player.getY())) + ")" );
         window.clear(sf::Color::Blue);
         window.draw(shape);
         window.draw(statusText);
