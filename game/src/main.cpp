@@ -26,10 +26,10 @@ int main() {
         //equivalent of an anim loop, put all repeated code within this.
         sf::Event event;
         if (event.type == sf::Event::Closed) window.close();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) player.move( 2.0f,  0.0f);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left )) player.move(-2.0f,  0.0f);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up   )) player.move( 0.0f, -2.0f);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down )) player.move( 0.0f,  2.0f);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)) player.move( 2.0f,  0.0f);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left ) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)) player.move(-2.0f,  0.0f);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up   ) || sf::Keyboard::isKeyPressed(sf::Keyboard::W)) player.move( 0.0f, -2.0f);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down ) || sf::Keyboard::isKeyPressed(sf::Keyboard::S)) player.move( 0.0f,  2.0f);
         //add physics here later
         shape.setPosition(player.getX(), player.getY());
         statusText.setString( player.getName() + " | HP: " + std::to_string(player.newMaxHealth()) + " | Pos: (" + std::to_string(static_cast<int>(player.getX())) + ", " + std::to_string(static_cast<int>(player.getY())) + ")" );
