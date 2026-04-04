@@ -7,6 +7,7 @@ public:
 
     void takeDamage(int dmg);
     void move(float dx, float dy);
+    void newMaxHealth() const;
     bool isAlive() const;
 
     float getX() const;
@@ -17,5 +18,6 @@ private:
     std::string name_;
     int health_;
     int maxHealth_;
+    int rounds_;
     float x_, y_;
 };

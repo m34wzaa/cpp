@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "Player.h"
-
+// make a tower defense game or smth
 int main() {
     //code
     sf::RenderWindow window(sf::VideoMode(800, 600), "Game Sim");
